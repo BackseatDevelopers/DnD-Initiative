@@ -1,0 +1,6 @@
+c:\users\mbr\documents\visual studio 2013\Projects\InitiativeApp\InitiativeApp\bin\InitiativeApp.dll.config
+c:\users\mbr\documents\visual studio 2013\Projects\InitiativeApp\InitiativeApp\bin\InitiativeApp.dll
+c:\users\mbr\documents\visual studio 2013\Projects\InitiativeApp\InitiativeApp\bin\InitiativeApp.pdb
+c:\users\mbr\documents\visual studio 2013\Projects\InitiativeApp\InitiativeApp\obj\Debug\InitiativeApp.csprojResolveAssemblyReference.cache
+c:\users\mbr\documents\visual studio 2013\Projects\InitiativeApp\InitiativeApp\obj\Debug\InitiativeApp.dll
+c:\users\mbr\documents\visual studio 2013\Projects\InitiativeApp\InitiativeApp\obj\Debug\InitiativeApp.pdb

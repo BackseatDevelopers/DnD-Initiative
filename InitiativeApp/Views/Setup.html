@@ -1,0 +1,56 @@
+﻿<div class="col-xs-12">
+    <div class="panel">
+        <div class="col-sm-6 col-xs-12">
+            <div class="well clearfix" data-ng-repeat="player in players">
+                <div class="row">
+                    <label class="col-xs-4">Name:</label>
+                    <span class="col-xs-7">
+                        <input type="text" data-ng-change="setupCtrl.update(player)" data-ng-model="player.name" />
+                    </span>
+                    <span class="col-xs-1">
+                        <button class="btn btn-xs btn-danger" data-ng-click="setupCtrl.removePlayer(player)">X</button>
+                    </span>
+                </div>
+                <div class="row">
+                    <label class="col-xs-4">Initiative bonus:</label>
+                    <span class="col-xs-8">
+                        <input type="number" data-ng-change="setupCtrl.update(player)" data-ng-model="player.initiativeBonus" />
+                    </span>
+                </div>
+                <div class="row">
+                    <label class="col-xs-4">Initiative:</label>
+                    <span class="col-xs-8">
+                        <input type="number" data-ng-change="setupCtrl.update(player)" data-ng-model="player.initiative" />
+                    </span>
+                </div>
+            </div>
+
+            <button class="btn btn-default" data-ng-click="setupCtrl.createPlayer()">Create player</button>
+        </div>
+
+        <div class="col-sm-6 col-xs-12">
+            <div class="well clearfix" data-ng-repeat="monster in monsters">
+                <button class="btn btn-xs btn-danger" data-ng-click="setupCtrl.removeMonster(monster)">X</button>
+                <div class="row">
+                    <label class="col-xs-4">Name:</label>
+                    <input type="text" data-ng-change="setupCtrl.update(monster)" data-ng-model="monster.name" />
+                </div>
+                <div class="row">
+                    <label class="col-xs-4">Initiative bonus:</label>
+                    <input type="number" data-ng-change="setupCtrl.update(monster)" data-ng-model="monster.initiativeBonus" />
+                </div>
+                <div class="row">
+                    <label class="col-xs-4">Initiative:</label>
+                    <input type="number" data-ng-change="setupCtrl.update(monster)" data-ng-model="monster.initiative" />
+                </div>
+            </div>
+
+            <button class="btn btn-default" data-ng-click="setupCtrl.createMonster()">Create monster</button>
+        </div>
+    </div>
+
+    <div class="col-xs-12 top-buffer">
+        <button class="btn btn-primary" data-ng-click="setupCtrl.rollInitiative()">Roll initiative</button>
+        <button class="btn btn-primary" data-ng-click="setupCtrl.startGame()">Start Game</button>
+    </div>
+</div>
