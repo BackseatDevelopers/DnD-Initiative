@@ -1,0 +1,23 @@
+﻿<div class="col-xs-12">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Initiative bonus</th>
+                <th>Initiative</th>
+                <th>Is alive?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-class="{'active': combatant.isActive }" data-ng-repeat="combatant in combatants">
+                <td>{{ combatant.name }}</td>
+                <td>{{ combatant.initiativeBonus }}</td>
+                <td>{{ combatant.initiative }}</td>
+                <td><input type="checkbox" data-ng-model="combatant.isAlive" /></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <button class="btn btn-primary" data-ng-click="playCtrl.activateNextCombatant()">Next combatant</button>
+    <button class="btn btn-danger" data-ng-click="playCtrl.endCombat()">End combat</button>
+</div>
