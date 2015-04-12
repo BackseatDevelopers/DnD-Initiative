@@ -5,14 +5,14 @@
             {
                 name: "setup",
                 url: "/Setup",
-                templateUrl: "Setup.html",
+                templateUrl: "setup.html",
                 controller: "setupController",
                 controllerAs: "setupCtrl",
             },
             {
                 name: "play",
                 url: "/Play",
-                templateUrl: "Play.html",
+                templateUrl: "play.html",
                 controller: "playController",
                 controllerAs: "playCtrl"
             }
