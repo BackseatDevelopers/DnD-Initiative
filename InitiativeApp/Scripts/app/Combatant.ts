@@ -22,7 +22,11 @@
             if (other.initiative != this.initiative) {
                 return this.initiative - other.initiative;
             } else {
-                return this.initiativeBonus - other.initiativeBonus;                
+                if (other.initiativeBonus != this.initiativeBonus) {
+                    return this.initiativeBonus - other.initiativeBonus;
+                } else {
+                    return Math.ceil(Math.random() * 2) - 1;
+                }
             }
         }
 

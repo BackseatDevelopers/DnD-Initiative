@@ -1,56 +1,97 @@
 ﻿<div class="col-xs-12">
     <div class="panel">
         <div class="col-sm-6 col-xs-12">
-            <div class="well clearfix" data-ng-repeat="player in players">
-                <div class="row">
-                    <label class="col-xs-4">Name:</label>
-                    <span class="col-xs-7">
-                        <input type="text" data-ng-change="setupCtrl.update(player)" data-ng-model="player.name" />
-                    </span>
-                    <span class="col-xs-1">
-                        <button class="btn btn-xs btn-danger" data-ng-click="setupCtrl.removePlayer(player)">X</button>
-                    </span>
+            <div class="panel panel-default">
+                <div class="panel-heading pointer" data-toggle="collapse" data-target="#players">
+                    <h3 class="panel-title clearfix">Players</h3>
                 </div>
-                <div class="row">
-                    <label class="col-xs-4">Initiative bonus:</label>
-                    <span class="col-xs-8">
-                        <input type="number" data-ng-change="setupCtrl.update(player)" data-ng-model="player.initiativeBonus" />
-                    </span>
+                <div id="players" class="panel-body collapse in">
+                    <div class="well clearfix" data-ng-repeat="player in players">
+                        <div class="form-group col-lg-4">
+                            <label class="control-label" for="{{ player.name }}">Name: </label>
+                            <div>
+                                <input class="form-control" id="{{ player.name }}" type="text" placeholder="Name" data-ng-change="setupCtrl.update(player)" data-ng-model="player.name" />
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6">
+                            <label class="control-label" for="{{ player.name + '_initbonus' }}">Initiative bonus: </label>
+                            <div>
+                                <input class="form-control" id="{{ player.name + '_initbonus' }}" type="number" placeholder="Initiative bonus" data-ng-change="setupCtrl.update(player)" data-ng-model="player.initiativeBonus" />
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6">
+                            <label class="control-label" for="{{ player.name + '_init' }}">Initiative: </label>
+                            <div>
+                                <div class="input-group">
+                                    <input class="form-control" id="{{ player.name + '_init' }}" type="number" placeholder="Initiative" data-ng-change="setupCtrl.update(player)" data-ng-model="player.initiative" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" data-ng-disabled="!player.initiative" data-ng-click="player.rollInitiative()">Roll</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-danger" data-ng-click="setupCtrl.removePlayer(player)" data-ng-click="">Remove</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <label class="col-xs-4">Initiative:</label>
-                    <span class="col-xs-8">
-                        <input type="number" data-ng-change="setupCtrl.update(player)" data-ng-model="player.initiative" />
-                    </span>
+                <div class="panel-footer clearfix">
+                    <button class="btn btn-default btn-success pull-right" data-ng-click="setupCtrl.createPlayer()">Create player</button>
                 </div>
             </div>
-
-            <button class="btn btn-default" data-ng-click="setupCtrl.createPlayer()">Create player</button>
         </div>
 
         <div class="col-sm-6 col-xs-12">
-            <div class="well clearfix" data-ng-repeat="monster in monsters">
-                <button class="btn btn-xs btn-danger" data-ng-click="setupCtrl.removeMonster(monster)">X</button>
-                <div class="row">
-                    <label class="col-xs-4">Name:</label>
-                    <input type="text" data-ng-change="setupCtrl.update(monster)" data-ng-model="monster.name" />
+            <div class="panel panel-default">
+                <div class="panel-heading pointer" data-toggle="collapse" data-target="#monsters">
+                    <h3 class="panel-title">Monsters</h3>
                 </div>
-                <div class="row">
-                    <label class="col-xs-4">Initiative bonus:</label>
-                    <input type="number" data-ng-change="setupCtrl.update(monster)" data-ng-model="monster.initiativeBonus" />
+                <div id="monsters" class="panel-body collapse in">
+                    <div class="well clearfix" data-ng-repeat="monster in monsters">
+                        <div class="form-group col-lg-4">
+                            <label class="control-label" for="{{ monster.name }}">Name: </label>
+                            <div>
+                                <input class="form-control" id="{{ monster.name }}" type="text" placeholder="Name" data-ng-change="setupCtrl.update(monster)" data-ng-model="monster.name" />
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6">
+                            <label class="control-label" for="{{ monster.name + '_initbonus' }}">Initiative bonus: </label>
+                            <div>
+                                <input class="form-control" id="{{ monster.name + '_initbonus' }}" type="number" placeholder="Initiative bonus" data-ng-change="setupCtrl.update(monster)" data-ng-model="monster.initiativeBonus" />
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6">
+                            <label class="control-label" for="{{ monster.name + '_init' }}">Initiative: </label>
+                            <div>
+                                <div class="input-group">
+                                    <input class="form-control" id="{{ monster.name + '_init' }}" type="number" placeholder="Initiative" data-ng-change="setupCtrl.update(monster)" data-ng-model="monster.initiative" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" data-ng-disabled="!monster.initiative" data-ng-click="monster.rollInitiative()">Roll</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-danger btn-primary" data-ng-click="setupCtrl.removeMonster(monster)">Remove</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <label class="col-xs-4">Initiative:</label>
-                    <input type="number" data-ng-change="setupCtrl.update(monster)" data-ng-model="monster.initiative" />
+                <div class="panel-footer clearfix">
+                    <button class="btn btn-success pull-right" data-ng-click="setupCtrl.createMonster()">Create monster</button>
                 </div>
             </div>
-
-            <button class="btn btn-default" data-ng-click="setupCtrl.createMonster()">Create monster</button>
         </div>
     </div>
 
     <div class="col-xs-12 top-buffer">
-        <button class="btn btn-primary" data-ng-click="setupCtrl.rollInitiative()">Roll initiative</button>
-        <button class="btn btn-primary" data-ng-click="setupCtrl.startGame()">Start Game</button>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Options</h3>
+            </div>
+            <div class="panel-body">
+                <button class="btn btn-default" data-ng-click="setupCtrl.rollInitiative()">Roll initiative for all</button>
+                <button class="btn btn-primary" data-ng-click="setupCtrl.startGame()">Start Game</button>
+            </div>
+        </div>
     </div>
 </div>

@@ -80,9 +80,9 @@
     <Content Include="Scripts\app\SetupController.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\jquery-1.11.2.js" />
-    <Content Include="Views\index.html" />
-    <Content Include="Views\play.html" />
-    <Content Include="Views\setup.html" />
+    <Content Include="Views\Index.html" />
+    <Content Include="Views\Play.html" />
+    <Content Include="Views\Setup.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

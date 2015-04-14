@@ -9,7 +9,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr data-ng-class="{'active': combatant.isActive }" data-ng-repeat="combatant in combatants">
+            <tr data-ng-class="{'activated': combatant.isActive }" data-ng-repeat="combatant in combatants">
                 <td>{{ combatant.name }}</td>
                 <td>{{ combatant.initiativeBonus }}</td>
                 <td>{{ combatant.initiative }}</td>
