@@ -25,7 +25,7 @@
                                 <div class="input-group">
                                     <input class="form-control" id="{{ player.name + '_init' }}" type="number" placeholder="Initiative" data-ng-change="setupCtrl.update(player)" data-ng-model="player.initiative" />
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button" data-ng-disabled="!player.initiativeBonus" data-ng-click="player.rollInitiative()">Roll</button>
+                                        <button class="btn btn-default" type="button" data-ng-disabled="!player.initiativeBonus && player.initiativeBonus !== 0" data-ng-click="player.rollInitiative()">Roll</button>
                                     </span>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                                 <div class="input-group">
                                     <input class="form-control" id="{{ monster.name + '_init' }}" type="number" placeholder="Initiative" data-ng-change="setupCtrl.update(monster)" data-ng-model="monster.initiative" />
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button" data-ng-disabled="!monster.initiativeBonus" data-ng-click="monster.rollInitiative()">Roll</button>
+                                        <button class="btn btn-default" type="button" data-ng-disabled="!monster.initiativeBonus && monster.initiativeBonus !== 0" data-ng-click="monster.rollInitiative()">Roll</button>
                                     </span>
                                 </div>
                             </div>
