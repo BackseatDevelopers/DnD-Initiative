@@ -16,21 +16,21 @@
                         <div class="form-group col-lg-4 col-md-6">
                             <label class="control-label" for="{{ player.name + '_initbonus' }}">Initiative bonus: </label>
                             <div>
-                                <input class="form-control" id="{{ player.name + '_initbonus' }}" type="number" placeholder="Initiative bonus" data-ng-change="setupCtrl.update(player)" data-ng-model="player.initiativeBonus" />
+                                <input class="form-control" id="{{ player.name + '_initbonus' }}" type="number" data-ng-change="setupCtrl.update(player)" data-ng-model="player.initiativeBonus" />
                             </div>
                         </div>
                         <div class="form-group col-lg-4 col-md-6">
                             <label class="control-label" for="{{ player.name + '_init' }}">Initiative: </label>
                             <div>
                                 <div class="input-group">
-                                    <input class="form-control" id="{{ player.name + '_init' }}" type="number" placeholder="Initiative" data-ng-change="setupCtrl.update(player)" data-ng-model="player.initiative" />
+                                    <input class="form-control" id="{{ player.name + '_init' }}" type="number" data-ng-change="setupCtrl.update(player)" data-ng-model="player.initiative" />
                                     <span class="input-group-btn">
                                         <button class="btn btn-default" type="button" data-ng-disabled="!player.initiativeBonus && player.initiativeBonus !== 0" data-ng-click="player.rollInitiative()">Roll</button>
                                     </span>
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div class="col-xs-12">
                             <button class="btn btn-danger" data-ng-click="setupCtrl.removePlayer(player)" data-ng-click="">Remove</button>
                         </div>
                     </div>
@@ -57,21 +57,21 @@
                         <div class="form-group col-lg-4 col-md-6">
                             <label class="control-label" for="{{ monster.name + '_initbonus' }}">Initiative bonus: </label>
                             <div>
-                                <input class="form-control" id="{{ monster.name + '_initbonus' }}" type="number" placeholder="Initiative bonus" data-ng-change="setupCtrl.update(monster)" data-ng-model="monster.initiativeBonus" />
+                                <input class="form-control" id="{{ monster.name + '_initbonus' }}" type="number" data-ng-change="setupCtrl.update(monster)" data-ng-model="monster.initiativeBonus" />
                             </div>
                         </div>
                         <div class="form-group col-lg-4 col-md-6">
                             <label class="control-label" for="{{ monster.name + '_init' }}">Initiative: </label>
                             <div>
                                 <div class="input-group">
-                                    <input class="form-control" id="{{ monster.name + '_init' }}" type="number" placeholder="Initiative" data-ng-change="setupCtrl.update(monster)" data-ng-model="monster.initiative" />
+                                    <input class="form-control" id="{{ monster.name + '_init' }}" type="number" data-ng-change="setupCtrl.update(monster)" data-ng-model="monster.initiative" />
                                     <span class="input-group-btn">
                                         <button class="btn btn-default" type="button" data-ng-disabled="!monster.initiativeBonus && monster.initiativeBonus !== 0" data-ng-click="monster.rollInitiative()">Roll</button>
                                     </span>
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div class="col-xs-12">
                             <button class="btn btn-danger btn-primary" data-ng-click="setupCtrl.removeMonster(monster)">Remove</button>
                         </div>
                     </div>

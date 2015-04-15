@@ -10,7 +10,7 @@
         </thead>
         <tbody>
             <tr data-ng-class="{'activated': combatant.isActive }" data-ng-repeat="combatant in combatants">
-                <td>{{ combatant.name }}</td>
+                <td class="col-xs-3">{{ combatant.name }}</td>
                 <td>{{ combatant.initiativeBonus }}</td>
                 <td>{{ combatant.initiative }}</td>
                 <td><input type="checkbox" data-ng-model="combatant.isAlive" /></td>
